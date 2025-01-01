@@ -2,16 +2,16 @@
 #include<windows.h>
 using namespace std;
 const int shpm[114514]={50,20};
-const string shpn[114514]={"Á¶Ò©¹ø","ÆÕÍ¨Ä§ÕÈ"};
+const string shpn[114514]={"ç‚¼è¯é”…","æ™®é€šé­”æ–"};
 const int shopw[114514]={1,3};
-int shpg=0;//±íÊ¾ÉÌÆ·ÊıÁ¿
+int shpg=0;//è¡¨ç¤ºå•†å“æ•°é‡
 
-char x;//ÊäÈë±äÁ¿
+char x;//è¾“å…¥å˜é‡
 int x1,x2;
 
 int bag[50][2]={},jb=100,xl=100;
-const string wp[114514]={"ÎŞ","Á¶Ò©¹ø","ÀÏÄ§ÕÈ","ÆÕÍ¨Ä§ÕÈ"};//ÎïÆ·Ãû³Æ
-const bool wpdd[114514]={0,1,0,0};//ÎïÆ·ÊÇ·ñ¶Ñµş
+const string wp[114514]={"æ— ","ç‚¼è¯é”…","è€é­”æ–","æ™®é€šé­”æ–"};//ç‰©å“åç§°
+const bool wpdd[114514]={0,1,0,0};//ç‰©å“æ˜¯å¦å †å 
 
 char tempchar;
 
@@ -81,7 +81,7 @@ bool daima(bool mode){
 		string sb1,sb2;
 		for(int i=0;i<1;i++){
 			if(fx!=vis){
-				MessageBox(0,"´íÎó:\nSAFE_CODE_VER_ERROR\n°æ±¾´íÎó£¡","Error",MB_OK+16);
+				MessageBox(0,"é”™è¯¯:\nSAFE_CODE_VER_ERROR\nç‰ˆæœ¬é”™è¯¯ï¼","Error",MB_OK+16);
 				return 1;
 			}
 		}
@@ -98,7 +98,7 @@ bool daima(bool mode){
 void bag1(){
 	for(int i=0;i<50;i++){
 		if(bag[i][1]==-1){
-			cout<<i+1<<'.'<<wp[bag[i][0]]<<"        XÎŞÏŞ";
+			cout<<i+1<<'.'<<wp[bag[i][0]]<<"        Xæ— é™";
 		}else{
 			cout<<i+1<<'.'<<wp[bag[i][0]]<<"        X"<<bag[i][1];
 		}
@@ -106,23 +106,23 @@ void bag1(){
 		
 	}
 	while(1){
-		slowly("Ö´ĞĞ²Ù×÷?(Y/N)");
+		slowly("æ‰§è¡Œæ“ä½œ?(Y/N)");
 		cin>>x;
 		if(x=='N'||x=='n'){
 			break;
 		}
-		slowly("ÒÆ¶¯ µÚn¸ö ÖÁµÚm¸ñ  ÒÆx¸ö¡£");
+		slowly("ç§»åŠ¨ ç¬¬nä¸ª è‡³ç¬¬mæ ¼  ç§»xä¸ªã€‚");
 		int n,m,x;
 		cin>>n>>m>>x;
 		if((bag[n-1][0]!=bag[m-1][0])){
-			MessageBox(0,"´íÎó:\nGOODS_DIFFERENT\nÎïÆ·²»ÏàÍ¬£¡","Error",MB_OK+16);
+			MessageBox(0,"é”™è¯¯:\nGOODS_DIFFERENT\nç‰©å“ä¸ç›¸åŒï¼","Error",MB_OK+16);
 		}else if(wpdd[m-1]){
-			MessageBox(0,"´íÎó:\nGOODS_CANT_STSCK\nÎïÆ·²»¿É¶Ñµş£¡","Error",MB_OK+16);
+			MessageBox(0,"é”™è¯¯:\nGOODS_CANT_STSCK\nç‰©å“ä¸å¯å †å ï¼","Error",MB_OK+16);
 		}else{
 			bag[n-1][1]-=x;
 			bag[m-1][1]+=x;
 			bag[m-1][0]=bag[n-1][0];
-			slowly("³É¹¦£¡");
+			slowly("æˆåŠŸï¼");
 		}
 	}
 	
@@ -140,7 +140,7 @@ void start(){
 	cout<<"*    *   *** *  *    *  *****   ****       *    *   ****    *** *   *****   *** *\n";
 	cout<<"                *    *\n";
 	cout<<"                 ****\n";
-	cout<<endl<<endl<<"                                Ä§·¨ÊÀ½ç\n";
+	cout<<endl<<endl<<"                                é­”æ³•ä¸–ç•Œ\n";
 	Sleep(5000);
 	system("cls");
 	system("color 47");
@@ -156,7 +156,7 @@ void start(){
 	Sleep(2500);
 	system("cls");
 	cout<<endl<<endl<<endl;
-	cout<<"      *´ËÓÎÏ·Áé¸ĞÀ´Ô´ÓÚÄ³Í¬Ñ§µÄÖ½ÖÊÓÎÏ·¡£"<<endl;
+	cout<<"      *æ­¤æ¸¸æˆçµæ„Ÿæ¥æºäºæŸåŒå­¦çš„çº¸è´¨æ¸¸æˆã€‚"<<endl;
 	Sleep(1500);
 	system("cls");
 	system("color 07");
@@ -168,9 +168,9 @@ void game(){
 	bool mzflag=0;
 	while(x!='X'&&x!='x'){
 		system("cls");
-		slowly("[O]Éú³É´úÂë  [S]ÉÌµê  [E]±³°ü  [F]¾ö¶·  [X]ÍË³ö   ½ğ±Ò:");
+		slowly("[O]ç”Ÿæˆä»£ç   [S]å•†åº—  [E]èƒŒåŒ…  [F]å†³æ–—  [X]é€€å‡º   é‡‘å¸:");
 		cout<<jb;
-		slowly("    ÑªÁ¿:");
+		slowly("    è¡€é‡:");
 		cout<<xl<<endl;
 		cout<<" ______________________________________\n";
 		cout<<"/      /|\\                             \\  \n";
@@ -190,7 +190,7 @@ void game(){
 void shop(){
 	bag2();
 	if(shpm==0){
-		slowly("ÕâÀïËÆºõÊ²Ã´Ò²Ã»ÓĞ...\n");
+		slowly("è¿™é‡Œä¼¼ä¹ä»€ä¹ˆä¹Ÿæ²¡æœ‰...\n");
 		system("pause");
 		return;
 	}
@@ -201,25 +201,25 @@ void shop(){
 			cout<<"              ";
 			cout<<shpm[i]<<endl;
 		}
-		slowly("ÊÇ·ñ½»Ò×? (Y/N)");
+		slowly("æ˜¯å¦äº¤æ˜“? (Y/N)");
 		cin>>x;
 		if(x=='N'||x=='n'){
 			return;
 		}
-		slowly("ÇëÊäÈë½»Ò×±àºÅ...");
+		slowly("è¯·è¾“å…¥äº¤æ˜“ç¼–å·...");
 		cin>>x1;
-		slowly("¹ºÂò[B] Âô³ö[S]");
+		slowly("è´­ä¹°[B] å–å‡º[S]");
 		cin>>x;
 		if(x=='b'||x=='B'){
-			slowly("ÇëÊäÈë½»Ò×ÊıÁ¿...");
+			slowly("è¯·è¾“å…¥äº¤æ˜“æ•°é‡...");
 			cin>>x2;
 			if(x2*shpm[x1-1]>jb){
-				MessageBox(0,"´íÎó:\nMONEY_NOT_ENOUGH\n½ğ±Ò²»×ã£¡","Error",MB_OK+16);
+				MessageBox(0,"é”™è¯¯:\nMONEY_NOT_ENOUGH\né‡‘å¸ä¸è¶³ï¼","Error",MB_OK+16);
 				continue;
 			}
 			for(int i=0;i<51;i++){
 				if(i==50){
-					MessageBox(0,"´íÎó:\nBAG_SPACES_NOT_ENOUGH\n±³°ü¿Õ¼ä²»×ã£¡","Error",MB_OK+16);
+					MessageBox(0,"é”™è¯¯:\nBAG_SPACES_NOT_ENOUGH\nèƒŒåŒ…ç©ºé—´ä¸è¶³ï¼","Error",MB_OK+16);
 				}else if(bag[i][1]==0||(shopw[x1]==bag[i][0]&&wpdd[shopw[x1]])){
 					bag[i][0]=shopw[x1];
 					bag[i][1]+=x2;
@@ -228,7 +228,7 @@ void shop(){
 				}
 			}
 		}else if(x=='s'||x=='S'){
-			slowly("ÇëÊäÈë½»Ò×ÊıÁ¿...");
+			slowly("è¯·è¾“å…¥äº¤æ˜“æ•°é‡...");
 			cin>>x2;
 		}
 	}
@@ -237,7 +237,7 @@ int main(){
 	qp();
 	start();
 	while(1){  
-		slowly("[N]ĞÂÓÎÏ·  [O]Ê¹ÓÃ´úÂë»Ö¸´ÉÏ´ÎÄÚÈİ [ÆäËû¼ü]ÍË³ö");
+		slowly("[N]æ–°æ¸¸æˆ  [O]ä½¿ç”¨ä»£ç æ¢å¤ä¸Šæ¬¡å†…å®¹ [å…¶ä»–é”®]é€€å‡º");
 		cin>>x;
 		if(x=='n'||x=='N'){
 			for(int i=0;i<50;i++){
